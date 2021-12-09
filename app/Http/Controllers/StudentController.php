@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -16,7 +17,7 @@ class StudentController extends Controller
         //show all students
         $students = Student::all();
 
-        return view('students', ['students' => $students, 'layout' => 'index']);
+        return view('student', ['students' => $students, 'layout' => 'index']);
     }
 
     /**
@@ -28,7 +29,7 @@ class StudentController extends Controller
     {
         //create a new student
         $student = Student::all();
-        return view('students', ['students' => $student, 'layout' => 'create']);
+        return view('student', ['student' => $student, 'layout' => 'create']);
     }
 
     /**
