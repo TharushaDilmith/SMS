@@ -11,7 +11,7 @@ class StudentController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function index()
     {
         //show all students
@@ -28,8 +28,8 @@ class StudentController extends Controller
     public function create()
     {
         //create a new student
-        $student = Student::all();
-        return view('student', ['student' => $student, 'layout' => 'create']);
+        $students = Student::all();
+        return view('student', ['students' => $students, 'layout' => 'create']);
     }
 
     /**
@@ -63,7 +63,9 @@ class StudentController extends Controller
     {
         //show a student
         $student = Student::find($id);
-        return view('student', ['student' => $student, 'layout' => 'show']);
+        //show students
+        $students = Student::all();
+        return view('student', ['student' => $student, 'stundents'=>$students,  'layout' => 'show']);
     }
 
     /**
@@ -76,7 +78,9 @@ class StudentController extends Controller
     {
         //edit a student
         $student = Student::find($id);
-        return view('student', ['student' => $student, 'layout' => 'edit']);
+        //show students
+        $students = Student::all();
+        return view('student', ['student' => $student, 'students'=>$students, 'layout' => 'edit']);
     }
 
     /**
